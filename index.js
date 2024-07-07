@@ -6,9 +6,13 @@ app.use(express.json());
 
 // Defina a rota para o webhook
 app.post('/webhook/a714d61a-75e0-4ec7-a280-8221e0f8319a', (req, res) => {
-  // Lógica para lidar com o webhook
   console.log('Webhook recebido:', req.body);
   res.status(200).send('Webhook recebido');
+});
+
+// Rota GET para a raiz
+app.get('/', (req, res) => {
+  res.send('Servidor rodando corretamente');
 });
 
 app.listen(port, () => {
